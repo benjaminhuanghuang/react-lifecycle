@@ -2,6 +2,7 @@
 
 [React: Lifecycles](https://www.linkedin.com/learning/react-lifecycles/modifying-the-prototype)
 
+Hajack the prototype methods 
 
 ## Setup
 ```

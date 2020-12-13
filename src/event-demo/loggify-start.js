@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { LoggerContainer, H2, Border } from './styled';
+import { LoggerContainer, H2, Border } from '../styled';
 
 function loggify(Wrapped) {
-  const methodsToLog = ['componentWillMount'];
+  const methodsToLog = ['componentWillMount', 'componentDidMount'];
 
   const originals = {};
 
@@ -12,7 +12,9 @@ function loggify(Wrapped) {
       originals[method] = Wrapped.prototype[method];
     }
     // replace
-    Wrapped.prototype[method] = (...args) => {
+    // Do not use => function here.
+    // => function will lost "this" points to Wrapped
+    Wrapped.prototype[method] = function newFunc(...args) {
       let original = originals[method];
 
       console.groupCollapsed(`${Wrapped.displayName} called ${method}`);
@@ -20,7 +22,8 @@ function loggify(Wrapped) {
       console.groupEnd();
 
       if (original) {
-        // original = original.bind(this);
+        // Whithout this line, can not call the metod in the Wrapped component
+        original = original.bind(this);
         original(...args);
       }
     };

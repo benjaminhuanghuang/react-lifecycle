@@ -1,6 +1,8 @@
 ## Load
 ```
+Parent Counstructor
 Parent componentWillMount
+  Child Counstructor
   Child componentWillMount
   Child componentDidMount
 Parent componentDidMount
