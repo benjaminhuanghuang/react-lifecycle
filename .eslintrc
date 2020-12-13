@@ -7,6 +7,7 @@
   },
   "rules": {
     "no-param-reassign":"off",
+    "operator-linebreak": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "max-classes-per-file": "off",
     "react/prefer-stateless-function": 0,
