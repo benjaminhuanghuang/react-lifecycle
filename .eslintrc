@@ -1,13 +1,18 @@
 {
+  "parser": "babel-eslint",
   "extends": "airbnb",
   "env": {
     "browser": true,
     "node": true
   },
   "rules": {
-    "react/prefer-stateless-function": "on",
+    "no-param-reassign":"off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "max-classes-per-file": "off",
+    "react/prefer-stateless-function": 0,
     "react/destructuring-assignment": "off",
     "react/button-has-type": "off",
-    "quotes": [2, "prefer-single"]
+    "react/jsx-props-no-spreading": "off",
+    "react/static-property-placement": "off"
   }
 }
