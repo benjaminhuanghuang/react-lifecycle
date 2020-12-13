@@ -118,3 +118,9 @@ export const Faster = styled(Column)`
   align-items: center;
 `;
 Faster.displayName = 'Faster';
+
+export const Border = styled.div`
+  border: 1px solid red;
+`;
+
+Flex.displayName = 'Border';
