@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import { LoggerContainer, H2, Border } from '../styled';
 
 function loggify(Wrapped) {
-  const methodsToLog = ['componentWillMount', 'componentDidMount'];
+  const methodsToLog = [
+    'componentWillMount',
+    'componentDidMount',
+    'componentWillUnmount',
+  ];
 
   const originals = {};
-
   methodsToLog.forEach((method) => {
     // preserve the original funtions
     if (Wrapped.prototype[method]) {

@@ -53,7 +53,7 @@ class App extends Component {
         >
           {showPollChild ? 'Hide' : 'show'} PollChile
         </button>
-        {showPollChild ? <PollChile /> : null} PollChile
+        {showPollChild ? <LoggedPollChile /> : null} PollChile
       </div>
     );
   }
@@ -61,7 +61,17 @@ class App extends Component {
 
 App.displayName = 'App';
 
+/*
+  Change poll every senond
+*/
 class PollChile extends Component {
+  constructor() {
+    super();
+    this.state = {
+      poll: 0,
+    };
+  }
+
   componentDidMount() {
     this.pollData();
   }
@@ -83,6 +93,8 @@ class PollChile extends Component {
 
   pollData = () => {
     this.pollInterval = setInterval(() => {
+      console.log('Poll');
+
       this.setState({
         poll: getRandomInt(1, 5),
       });
@@ -107,5 +119,7 @@ PollChile.propTypes = {
   data: PropTypes.number.isRequired,
   parentPoll: PropTypes.number.isRequired,
 };
+
+const LoggedPollChile = loggify(PollChile);
 
 export default loggify(App);

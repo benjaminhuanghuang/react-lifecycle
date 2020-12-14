@@ -6,6 +6,7 @@
     "node": true
   },
   "rules": {
+    "no-debugger":1,
     "prefer-const": 1,
     "no-unused-vars":1,
     "no-console": "off",
