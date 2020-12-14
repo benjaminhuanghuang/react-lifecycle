@@ -1,3 +1,15 @@
+## React events
+- Constructor
+
+- componentWillMount
+
+- componentDidMount
+
+- componentWillUnmount
+Happens then hide a component.
+It is the opportunity to clean up, like timer. 
+
+
 ## Load
 ```
 Parent Counstructor
